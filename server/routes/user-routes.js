@@ -31,7 +31,6 @@ router.get('/users/:username', (req, res) => {
     console.log("Get Thoughts for username route received");
     const params = {
         TableName: table,
-        ProjectionExpression: "#th, #ca, #un, #img",
         KeyConditionExpression: "#un = :user",
         ExpressionAttributeNames: {
             "#un": "username",
@@ -41,7 +40,9 @@ router.get('/users/:username', (req, res) => {
         },
         ExpressionAttributeValues: {
             ":user": req.params.username
-        }
+        },
+        ProjectionExpression: "#th, #ca, #un, #img",
+        ScanIndexForward: false
     };
     dynamodb.query(params, (err, data) => {
         if (err) {
