@@ -14,7 +14,6 @@ const ThoughtForm = () => {
     event.preventDefault();
     const data = new FormData();
     data.append('image', fileInput.current.files[0]);
-
     const postImage = async () => {
       try {
         const res = await fetch('/api/image-upload', {
@@ -91,7 +90,7 @@ const ThoughtForm = () => {
         ></textarea>
         <label className="form-input col-12  p-1">
           Add an image to your thought:
-        <input
+          <input
             type="file"
             ref={fileInput}
             className="form-input p-2"
@@ -102,7 +101,7 @@ const ThoughtForm = () => {
             type="submit"
           >
             Upload
-        </button>
+          </button>
         </label>
         <button className="btn col-12 " type="submit">
           Submit

@@ -2,7 +2,7 @@
 const AWS = require('aws-sdk');
 const { v4: uuidv4 } = require('uuid');
 
-// Set the region
+// Set the region, which will allow communication with the Web Service
 AWS.config.update({ region: 'us-east-2' });
 
 // Create S3 service object
