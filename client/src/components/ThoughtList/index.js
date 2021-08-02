@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './thoughtlist.css'
 
 // Renders the list of thoughts
 const ThoughtList = ({ thoughts, title }) => {
@@ -15,10 +16,10 @@ const ThoughtList = ({ thoughts, title }) => {
             <p className="card-header">
               <Link
                 to={`/profile/${thought.username}`}
-                style={{ fontWeight: 700 }}
+                style={{ fontWeight: 900 }}
                 className="text-light"
               >
-                {thought.username}'s thought on {new Date(parseInt(thought.createdAt)).toString()}
+                <div className="commenterName">By: {thought.username}</div> {new Date(parseInt(thought.createdAt)).toString()}
               </Link>{' '}
             </p>
             {thought.thought &&

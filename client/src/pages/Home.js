@@ -20,7 +20,7 @@ const Home = () => {
       }
     }
     fetchData();
-  }, [thoughts]);
+  }, []);
 
   return (
     <main>
@@ -30,9 +30,9 @@ const Home = () => {
         </div>
         <div className={`col-12 mb-3 `}>
           {!isLoaded ? (
-            <div>Loading...</div>
+            <div>Loading thoughts...</div>
           ) : (
-            <ThoughtList thoughts={thoughts} setThoughts={setThoughts} title="Some Feed for Thought(s)..." />
+            <ThoughtList thoughts={thoughts} setThoughts={setThoughts} title="Some Food for Thought(s)..." />
           )}
         </div>
       </div>
